@@ -12,7 +12,7 @@ Quand on veut automatiser des tâches avec Ansible sur OpenShift, on se retrouve
 Le problème est que les *devs* on leur propres clefs *ssh* et secrets *Keybase*. Il faut donc:
 
 * se *connecter* au container via ssh avec un *ssh forward agent* afin de pouvoir *remonter* la clef ssh du dev
-* de partager les secrets de *Keybase* via un volume point sur le container
+* de partager les secrets de *Keybase* via un point de montage /keybase sur le container
 
 
 

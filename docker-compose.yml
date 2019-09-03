@@ -1,6 +1,6 @@
 # source: 
 # 
-# zf190903.1700
+# zf190903.1739
 
 version: '3'
 
@@ -12,6 +12,7 @@ services:
         restart: always
         volumes:
             - .:/myubuntu
+            - /keybase:/keybase
         ports:
             - "52222:22"
         stdin_open: true

@@ -1,11 +1,12 @@
 #!/bin/bash
 #Petit script pour configurer un petit ubuntu dans un container docker
-#zf181003.1550
+#zf190903.1741
 # source: 
 
-apt update
+apt-get update
+apt-get -y install apt-utils
 apt-get -y install htop
-#exit
+exit
 
 #apt-get -y install vim nano bash-completion command-not-found sudo net-tools patch git
 apt-get -y install nano bash-completion command-not-found sudo net-tools inetutils-ping patch
@@ -20,4 +21,7 @@ echo -e "tototutu\ntototutu" | passwd root
 useradd --create-home -s /bin/bash ubuntu
 echo -e "tototutu\ntototutu" | passwd ubuntu
 adduser ubuntu sudo
+
+addgroup --gid 999 zdocker
+adduser ubuntu zdocker
 
