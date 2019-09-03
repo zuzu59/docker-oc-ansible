@@ -1,6 +1,6 @@
 # source: 
 # 
-# zf190903.1642
+# zf190903.1700
 
 version: '3'
 
@@ -13,7 +13,7 @@ services:
         volumes:
             - .:/myubuntu
         ports:
-            - "5221:22"
+            - "52222:22"
         stdin_open: true
         tty: true
 

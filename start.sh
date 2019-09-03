@@ -1,6 +1,6 @@
 #!/bin/bash
 #Petit script pour démarrer le binz
-#zf190903.1647
+#zf190903.1709
 # source: 
 
 
@@ -10,25 +10,39 @@ docker-compose up -d
 ./list.sh
 
 
-THEIP=$(/sbin/ifconfig ens18 | /bin/grep "inet ad" | /usr/bin/cut -f2 -d: | /usr/bin/awk '{print $1}')
 echo -e "
 
-On doit se connecter au container avec:
+pour voir les logs en continu:
+docker-compose logs -f
 
-ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no ubuntu@$THEIP -p 522x
+pour voir qu'est-ce qui tourne:
+docker-compose ps
+
+pour 'entrer' dans un 'service':
+docker-compose exec oc-ansible /bin/bash
+
+pour arrêter:
+docker-compose stop
+
+pour redémarrer après un 'stop':
+docker-compose start
+
+pour enlever les container mais pas les datas:
+docker-compose down
+
+pour enlever les container ET aussi les datas:
+docker-compose down -v --remove-orphans
+
+
+"
+
+
+echo -e "
+
+On doit se connecter au container avec (pass=tototutu):
+
+ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no ubuntu@localhost -p 52222
 
 "
 read -p "press [ENTER]"
-exit
-
-
-docker build -t zubuntu .
-./list.sh
-
-docker run -d -i --name="titi1" zubuntu
-./list.sh
-
-docker exec -ti dev /bin/bash
-docker exec -ti titi1 /bin/bash
-
 
