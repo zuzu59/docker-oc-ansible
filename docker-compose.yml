@@ -1,0 +1,20 @@
+# source: 
+# 
+# zf190903.1642
+
+version: '3'
+
+services:
+    oc-ansible:
+        build: .
+        image: zubuntu
+        container_name: oc-ansible
+        restart: always
+        volumes:
+            - .:/myubuntu
+        ports:
+            - "5221:22"
+        stdin_open: true
+        tty: true
+
+

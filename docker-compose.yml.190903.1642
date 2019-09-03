@@ -1,0 +1,68 @@
+# source: 
+# 
+# zf181003.1613
+
+version: '3'
+
+services:
+    dev:
+        build: .
+        image: zubuntu
+        container_name: dev
+        volumes:
+            - .:/myubuntu
+        ports:
+            - "5221:22"
+        stdin_open: true
+        tty: true
+
+    test:
+        image: zubuntu
+        container_name: test
+        volumes:
+            - .:/myubuntu
+        ports:
+        - "5222:22"
+        stdin_open: true
+        tty: true
+
+    master:
+        image: zubuntu
+        container_name: master
+        volumes:
+            - .:/myubuntu
+        ports:
+        - "5223:22"
+        stdin_open: true
+        tty: true
+
+    user1:
+        image: zubuntu
+        container_name: user1
+        volumes:
+            - .:/myubuntu
+        ports:
+        - "5224:22"
+        stdin_open: true
+        tty: true
+
+    user2:
+        image: zubuntu
+        container_name: user2
+        volumes:
+            - .:/myubuntu
+        ports:
+        - "5225:22"
+        stdin_open: true
+        tty: true
+
+    user3:
+        image: zubuntu
+        container_name: user3
+        volumes:
+            - .:/myubuntu
+        ports:
+        - "5226:22"
+        stdin_open: true
+        tty: true
+
