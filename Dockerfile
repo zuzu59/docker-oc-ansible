@@ -1,12 +1,11 @@
 FROM ubuntu:bionic
 
 MAINTAINER Christian Zufferey <christian@zufferey.com>
-# zf190903.1645
-
+# zf190903.1826
 
 COPY ubuntu_config.sh /root
 RUN chmod 755 /root/ubuntu_config.sh
-RUN /root//ubuntu_config.sh
+RUN /root/ubuntu_config.sh
 
 #RUN apt update \
 #	&& apt install htop

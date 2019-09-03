@@ -1,6 +1,6 @@
 #!/bin/bash
 #Petit script pour démarrer le binz
-#zf190903.1709
+#zf190903.1836
 # source: 
 
 
@@ -44,5 +44,5 @@ On doit se connecter au container avec (pass=tototutu):
 ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no ubuntu@localhost -p 52222
 
 "
-read -p "press [ENTER]"
+#read -p "press [ENTER]"
 

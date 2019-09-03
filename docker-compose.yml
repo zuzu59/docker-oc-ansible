@@ -11,6 +11,7 @@ services:
         container_name: oc-ansible
         restart: always
         volumes:
+            - ./home:/home/ubuntu
             - .:/myubuntu
             - /keybase:/keybase
         ports:

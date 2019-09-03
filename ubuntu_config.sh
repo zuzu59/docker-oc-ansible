@@ -1,15 +1,15 @@
 #!/bin/bash
-#Petit script pour configurer un petit ubuntu dans un container docker
-#zf190903.1741
+# Petit script pour configurer un petit ubuntu dans un container docker
+# zf190903.1846
 # source: 
 
 apt-get update
-apt-get -y install apt-utils
 apt-get -y install htop
-exit
+#exit
 
 #apt-get -y install vim nano bash-completion command-not-found sudo net-tools patch git
 apt-get -y install nano bash-completion command-not-found sudo net-tools inetutils-ping patch
+ln -s /usr/bin/python3 /usr/bin/python
 sleep 3
 #patch -i /myubuntu/bashrc.diff /root/.bashrc
 rm /etc/apt/apt.conf.d/docker-clean
@@ -24,4 +24,12 @@ adduser ubuntu sudo
 
 addgroup --gid 999 zdocker
 adduser ubuntu zdocker
+
+
+#exit
+apt-get -y dist-upgrade
+apt-get -y clean
+apt-get -y autoclean
+apt-get -y autoremove --purge
+
 
