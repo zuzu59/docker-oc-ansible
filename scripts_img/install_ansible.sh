@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #Installation de Ansible
-#zf190711.1030
+#zf190904.1611
 
 echo "---------- install de Ansible"
 

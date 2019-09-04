@@ -1,6 +1,6 @@
 #!/bin/bash
 #Petit script pour démarrer le binz
-#zf190904.1357
+#zf190904.1603
 # source:
 
 
@@ -48,6 +48,8 @@ On doit se connecter au container avec:
 ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no ubuntu@localhost -p 52222
 
 Si on n'a pas mis sa clef ssh pub dans le fichier ./ssh/authorized_keys, il faut utiliser le 'tototutu' comme password !
+Pour se créer facilement une clef ssh, il faut faire:
+ssh-keygen -t rsa -N "" -f ~/.ssh/id_rsa
 
 "
 #read -p "press [ENTER]"
