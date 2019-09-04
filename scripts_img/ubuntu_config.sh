@@ -3,31 +3,42 @@
 # zf190904.1109
 # source:
 
-exit
+#exit
 
 apt-get update
 apt-get -y install htop
-exit
+#exit
 
 #apt-get -y install vim nano bash-completion command-not-found sudo net-tools patch git
 apt-get -y install nano bash-completion command-not-found sudo net-tools inetutils-ping patch
 ln -s /usr/bin/python3 /usr/bin/python
 sleep 3
+
 #patch -i /myubuntu/bashrc.diff /root/.bashrc
+patch -i /root/bashrc.diff /root/.bashrc
 rm /etc/apt/apt.conf.d/docker-clean
+
+echo "---------------------------------------------------------------------------------------------------"
 apt-get update
+echo "---------------------------------------------------------------------------------------------------"
 
 #apt-get -y install openssh-server
 
-echo -e "tototutu\ntototutu" | passwd root
+# Création de l'utilisateur Ubuntu
+#echo -e "tototutu\ntototutu" | passwd root
 useradd --create-home -s /bin/bash ubuntu
 echo -e "tototutu\ntototutu" | passwd ubuntu
+
+echo "--------------------------toto1141"
+cp /root/.bashrc /home/ubuntu/
+touch /home/ubuntu/tutu1147
+ls -al /home/ubuntu
+chown ubuntu.ubuntu /home/ubuntu/.bashrc
+echo "--------------------------toto1141"
+
 adduser ubuntu sudo
+addgroup --gid 999 zdocker && adduser ubuntu zdocker
 
-addgroup --gid 999 zdocker
-adduser ubuntu zdocker
-
-#RUN patch -i /root/bashrc.diff /root/.bashrc
 
 exit
 apt-get -y dist-upgrade

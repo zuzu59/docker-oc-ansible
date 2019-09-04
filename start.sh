@@ -1,11 +1,12 @@
 #!/bin/bash
 #Petit script pour démarrer le binz
-#zf190903.1836
-# source: 
+#zf190904.1139
+# source:
 
 
 #./all_purge.sh
 
+mkdir ./home
 docker-compose up -d
 ./list.sh
 
