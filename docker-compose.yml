@@ -1,6 +1,6 @@
 # source: 
 # 
-# zf190903.1739
+# zf190904.1533
 
 version: '3'
 
@@ -11,11 +11,13 @@ services:
         container_name: oc-ansible
         restart: always
         volumes:
-            - ./home:/home/ubuntu
-            - .:/myubuntu
+            - .:/host
             - /keybase:/keybase
+            - .:/home/ubuntu/host
+            - ./dev:/home/ubuntu/dev
+            - ./ssh:/home/ubuntu/.ssh
         ports:
-            - "52222:22"
+            - "127.0.0.1:52222:22"
         stdin_open: true
         tty: true
 

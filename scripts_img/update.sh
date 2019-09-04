@@ -1,15 +1,13 @@
 #!/bin/bash
 #passe les updates sur la machine
-#zf190903.1751
+#zf190904.1535
 
-
-
-/myubuntu/clean_install.sh
+/host/clean_install.sh
 
 sudo apt-get update
-sudo apt-get dist-upgrade -y
+sudo apt-get -y dist-upgrade
 
-/myubuntu/clean_install.sh
+/host/clean_install.sh
 
 
 

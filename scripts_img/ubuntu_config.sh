@@ -1,6 +1,6 @@
 #!/bin/bash
 # Petit script pour configurer un petit ubuntu dans un container docker
-# zf190904.1109
+# zf190904.1345
 # source:
 
 #exit
@@ -14,7 +14,6 @@ apt-get -y install nano bash-completion command-not-found sudo net-tools inetuti
 ln -s /usr/bin/python3 /usr/bin/python
 sleep 3
 
-#patch -i /myubuntu/bashrc.diff /root/.bashrc
 patch -i /root/bashrc.diff /root/.bashrc
 rm /etc/apt/apt.conf.d/docker-clean
 
@@ -22,22 +21,23 @@ echo "--------------------------------------------------------------------------
 apt-get update
 echo "---------------------------------------------------------------------------------------------------"
 
-#apt-get -y install openssh-server
+apt-get -y install openssh-server
+
+
+exit
+
 
 # Création de l'utilisateur Ubuntu
-#echo -e "tototutu\ntototutu" | passwd root
+
+#adduser --disabled-password --gecos '' ubuntu
+
 useradd --create-home -s /bin/bash ubuntu
-echo -e "tototutu\ntototutu" | passwd ubuntu
+#echo -e "tototutu\ntototutu" | passwd ubuntu
 
-echo "--------------------------toto1141"
 cp /root/.bashrc /home/ubuntu/
-touch /home/ubuntu/tutu1147
-ls -al /home/ubuntu
 chown ubuntu.ubuntu /home/ubuntu/.bashrc
-echo "--------------------------toto1141"
 
-adduser ubuntu sudo
-addgroup --gid 999 zdocker && adduser ubuntu zdocker
+adduser ubuntu sudo && addgroup --gid 999 zdocker && adduser ubuntu zdocker
 
 
 exit

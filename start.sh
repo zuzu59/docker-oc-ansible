@@ -1,12 +1,15 @@
 #!/bin/bash
 #Petit script pour démarrer le binz
-#zf190904.1139
+#zf190904.1357
 # source:
 
 
 #./all_purge.sh
 
-mkdir ./home
+mkdir ./dev
+mkdir ./ssh
+cp ~/.ssh/id_rsa.pub ./ssh/authorized_keys
+
 docker-compose up -d
 ./list.sh
 
@@ -40,9 +43,11 @@ docker-compose down -v --remove-orphans
 
 echo -e "
 
-On doit se connecter au container avec (pass=tototutu):
+On doit se connecter au container avec:
 
 ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no ubuntu@localhost -p 52222
+
+Si on n'a pas mis sa clef ssh pub dans le fichier ./ssh/authorized_keys, il faut utiliser le 'tototutu' comme password !
 
 "
 #read -p "press [ENTER]"
