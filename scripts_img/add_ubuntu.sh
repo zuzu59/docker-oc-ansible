@@ -1,6 +1,6 @@
 #!/bin/bash
 # Petit script pour créer un utilisateur Ubuntu avec tout ce qu'il faut ;-)
-# zf190905.1555
+# zf190905.1617
 # source:
 
 adduser --home /home/ubuntu --shell /bin/bash --disabled-password --gecos '' ubuntu
