@@ -1,12 +1,15 @@
 # source: 
 # 
-# zf190904.1533
+# zf190905.1450
 
 version: '3'
 
 services:
     oc-ansible:
-        build: .
+        build: 
+            context: ./
+            args:
+                OC_ANSIBLE_PWD: $OC_ANSIBLE_PWD
         image: zubuntu
         container_name: oc-ansible
         restart: always

@@ -1,6 +1,6 @@
 #!/bin/bash
 #Petit script pour démarrer le binz
-#zf190904.1657
+#zf190905.1559
 # source:
 
 
@@ -10,6 +10,8 @@ mkdir ./dev
 mkdir ./ssh
 cp ~/.ssh/id_rsa.pub ./ssh/authorized_keys
 cp ~/.ssh/config ./ssh/config
+
+source /keybase/team/epfl_idevfsd.oc_ansible/oc_ansible_secrets.sh
 
 docker-compose up -d
 ./list.sh
@@ -38,12 +40,13 @@ docker-compose down
 pour enlever les container ET aussi les datas:
 docker-compose down -v --remove-orphans
 
-
 "
 
 echo -e "
 
-Si on n'a pas mis sa clef ssh pub dans le fichier ./ssh/authorized_keys, il faut utiliser le 'tototutu' comme password !
+Si on n'a pas mis sa clef ssh pub dans le fichier ssh/authorized_keys, il faut utiliser le password qui se trouve dans:
+/keybase/team/epfl_idevfsd.oc_ansible/oc_ansible_secrets.sh
+
 Pour se créer facilement une clef ssh, il faut faire:
 ssh-keygen -t rsa -N "" -f ~/.ssh/id_rsa
 
