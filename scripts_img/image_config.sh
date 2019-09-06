@@ -1,15 +1,15 @@
 
 #!/bin/bash
 # Petit script pour configurer l'image docker ubuntu utilisée pour le container docker
-# zf190906.1037
-# source: 
+# zf190906.1403
+# source:
 
 
-exit
+#exit
 
 /root/ubuntu_config.sh
 
-exit
+#exit
 
 /root/add_ubuntu.sh
 
@@ -17,3 +17,5 @@ exit
 /root/install_oc.sh
 /root/update.sh
 /root/clean_install.sh
+
+
