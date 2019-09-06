@@ -1,6 +1,6 @@
 #!/bin/bash
 #Petit script pour démarrer le binz
-#zf190905.1559
+#zf190906.1333
 # source:
 
 
@@ -26,7 +26,9 @@ pour voir qu'est-ce qui tourne:
 docker-compose ps
 
 pour 'entrer' dans un 'service':
+----------------------------------------
 docker-compose exec oc-ansible /bin/bash
+----------------------------------------
 
 pour arrêter:
 docker-compose stop
