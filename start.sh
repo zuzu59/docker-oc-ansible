@@ -1,6 +1,6 @@
 #!/bin/bash
 #Petit script pour démarrer le binz
-#zf190906.1333
+#zf190906.1503
 # source:
 
 
@@ -10,8 +10,6 @@ mkdir ./dev
 mkdir ./ssh
 cp ~/.ssh/id_rsa.pub ./ssh/authorized_keys
 cp ~/.ssh/config ./ssh/config
-
-source /keybase/team/epfl_idevfsd.oc_ansible/oc_ansible_secrets.sh
 
 docker-compose up -d
 ./list.sh
