@@ -1,6 +1,6 @@
 #!/bin/bash
 # Petit script pour configurer un petit ubuntu dans un container docker
-# zf190906.1454
+# zf190906.1736
 # source:
 
 
@@ -16,7 +16,7 @@ apt-get update
 apt-get -y install htop
 #exit
 
-apt-get -y install nano bash-completion command-not-found sudo net-tools inetutils-ping patch git
+apt-get -y install nano bash-completion command-not-found sudo net-tools inetutils-ping patch git curl
 ln -s /usr/bin/python3 /usr/bin/python
 sleep 3
 #exit
