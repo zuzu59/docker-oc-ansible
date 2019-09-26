@@ -1,6 +1,6 @@
 #!/bin/bash
 #Petit script pour démarrer le binz
-#zf190906.1639
+#zf190926.1059
 # source:
 
 
@@ -62,9 +62,12 @@ On doit se connecter au container avec:
 ssh -A -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no ubuntu@localhost -p 52222
 
 
-On peut monter le drive en sshfs afin de pouvoir utiliser Atom depuis sa machine avec:
 
+On peut monter le drive en sshfs afin de pouvoir utiliser Atom depuis sa machine avec:
 sshfs -p 52222 ubuntu@localhost:/home/ubuntu ./dev
+
+On peut installer ma boîte à outils avec:
+./host/scripts_img/install_deploy-proxmox.sh
 
 "
 #read -p "press [ENTER]"
